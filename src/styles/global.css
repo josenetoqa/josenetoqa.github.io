@@ -5,16 +5,16 @@
  */
 
 :root {
-	--accent: #2337ff;
-	--accent-dark: #000d8a;
-	--black: 15, 18, 25;
-	--gray: 96, 115, 159;
-	--gray-light: 229, 233, 240;
-	--gray-dark: 34, 41, 57;
-	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
-	--box-shadow:
-		0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
-		0 16px 32px rgba(var(--gray), 33%);
+    --accent: #4a90e2;
+    --accent-dark: #003366;
+    --black: 240, 240, 240; /* Light text color for dark background */
+    --gray: 200, 200, 200; /* Adjusted gray for better contrast */
+    --gray-light: 50, 50, 50; /* Dark background */
+    --gray-dark: 20, 20, 20; /* Even darker background */
+    --gray-gradient: rgba(var(--gray-light), 50%), #000;
+    --box-shadow:
+        0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
+        0 16px 32px rgba(var(--gray), 33%);
 }
 @font-face {
 	font-family: 'Atkinson';
@@ -35,11 +35,10 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	background: linear-gradient(var(--gray-gradient)) no-repeat;
-	background-size: 100% 600px;
+	background: rgb(var(--gray-dark));
+	color: rgb(var(--black));
 	word-wrap: break-word;
 	overflow-wrap: break-word;
-	color: rgb(var(--gray-dark));
 	font-size: 20px;
 	line-height: 1.7;
 }
@@ -82,7 +81,7 @@ a {
 	color: var(--accent);
 }
 a:hover {
-	color: var(--accent);
+	color: var(--accent-dark);
 }
 p {
 	margin-bottom: 1em;
@@ -108,10 +107,13 @@ img {
 code {
 	padding: 2px 5px;
 	background-color: rgb(var(--gray-light));
+	color: rgb(var(--black));
 	border-radius: 2px;
 }
 pre {
 	padding: 1.5em;
+	background-color: rgb(var(--gray-light));
+	color: rgb(var(--black));
 	border-radius: 8px;
 }
 pre > code {
@@ -119,6 +121,7 @@ pre > code {
 }
 blockquote {
 	border-left: 4px solid var(--accent);
+	color: rgb(var(--black));
 	padding: 0 0 0 20px;
 	margin: 0px;
 	font-size: 1.333em;
@@ -153,3 +156,21 @@ hr {
 	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
 }
+
+header {
+    background-color: #141414; /* Explicit dark color */
+    color: #f0f0f0; /* Light text color for readability */
+}
+
+nav a {
+    color: rgb(var(--black)); /* Light text color for navigation links */
+}
+
+nav a.active {
+    border-bottom-color: var(--accent); /* Accent color for active links */
+}
+
+footer {
+        background: rgb(var(--gray-dark));
+        color: rgb(var(--black));
+    }
